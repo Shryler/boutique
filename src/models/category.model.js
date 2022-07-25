@@ -1,22 +1,19 @@
 import { DataManager } from "../helpers/dataManager.helper";
+import { BaseModel } from "./baseModel.model";
 
-export class Category {
-    id = -1;
+export class Category extends BaseModel {
+
     title = "";
     description = "";
     image = "";
 
-    constructor(props){
-        for (const key in props) { 
-            if (!this.hasOwnProperty(key)){
-                delete props[key];
-            }
-        }
-        Object.assign(this, props);
+    constructor(props) { // Permet d'appeler le constructor dans le constructor baseModel
+        super(props);
+        this.assign(props);
     }
+
     getProductList(){
         const dataMngr = new DataManager();
-        const rows = dataMngr.getAll("product").filter(item => item.category_id == this.id);
-        return rows;
+        return dataMngr.getAll("product").filter(item => item.category_id == this.id);
     }
 }

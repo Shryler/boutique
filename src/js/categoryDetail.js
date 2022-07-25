@@ -21,6 +21,7 @@ function generateDetail(category){
             return `
             <div class="col-sm-3">
             <div class="card">
+            <span class="position-absolute top-0 m-1 end-0 badge rounded-pill bg-danger"><small>${category.price} €</small></span>
                 <img src="${category.image}" class="card-img-top" alt="Image de ${category.title}">
                 <div class="card-body">
                     <h5 class="card-title">${category.title}</h5>

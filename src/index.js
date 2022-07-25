@@ -1,6 +1,4 @@
-import { DataManager } from "./helpers/dataManager.helper";
-import { Category } from "./models/category.model";
-
+import { DataManager } from "./helpers/dataManager.helper.js";
 
 const dataMngr = new DataManager(["category", "product"]);
 dataMngr.initDataStorage();
@@ -29,7 +27,6 @@ function createCategory() {
     }).join("");
 
     const links = document.querySelectorAll('a[id="categoryLink"]');
-    console.log(links);
     
     for (const link of links) {
         link.addEventListener("click", () => {

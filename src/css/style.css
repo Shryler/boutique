@@ -2,3 +2,12 @@ a {
     text-decoration: none;
     color:black;
 }
+
+.card-body {
+    height:160px;
+    overflow: auto;
+}
+
+.card-title {
+    text-transform: uppercase;
+}
